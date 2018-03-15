@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Car-shop, Shop your Car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel='stylesheet' href="bootstrap.css">
+    <link rel="stylesheet" href="evaluate.css">
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="homepage.html">About Us
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Wanna Sell your car? </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link enabled" href="buy_car.html">Buy Your First Car</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">What We serve:-</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Book a free ride</a>
+                        <a class="dropdown-item" href="#">Evalauate Your Car price</a>
+                        <a class="dropdown-item" href="#">Buy Parts for your car</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Free Online Valuation</h1>
+                <p class="lead">
+                    We are delighted to provide this feature to all of our customers.
+                </p>
+
+                <section class="best-price-form-section aos-init aos-animate" data-aos="slide-up">
+                    <div class="container">
+                        <div class="best-price-form">
+                            <form name="Leadform" class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-email"
+                                novalidate="" ng-submit="create_lead()">
+                                <h2 class="form-title">Sell your car in best price</h2>
+                                <div class="form-row">
+                                    <div class="form-col fl">
+                                        <select name="manufacturer" class="select-feild make ng-pristine ng-invalid ng-invalid-required ng-touched" id="manufacturer"
+                                            required="required" ng-required="true" ng-model="lead.manufacturer_id" ng-change="get_manufacturer_models(lead)"
+                                            ng-options="manufacturer.id as manufacturer.name for manufacturer in manufacturers">
+                                            <option selected="selected" value="">Select Make*</option>
+                                            <option value="0" label="maruti suzuki">maruti suzuki</option>
+                                            <option value="1" label="hyundai">hyundai</option>
+                                            <option value="2" label="honda">honda</option>
+                                            <option value="3" label="toyota">toyota</option>
+                                            <option value="4" label="chevrolet">chevrolet</option>
+                                            <option value="5" label="ford">ford</option>
+                                            <option value="6" label="mahindra">mahindra</option>
+                                            <option value="7" label="skoda">skoda</option>
+                                            <option value="8" label="volkswagen">volkswagen</option>
+                                            <option value="9" label="nissan">nissan</option>
+                                            <option value="10" label="renault">renault</option>
+                                            <option value="11" label="fiat">fiat</option>
+                                            <option value="12" label="mercedes benz">mercedes benz</option>
+                                            <option value="13" label="bmw">bmw</option>
+                                            <option value="14" label="audi">audi</option>
+                                            <option value="15" label="aston martin">aston martin</option>
+                                            <option value="16" label="datsun">datsun</option>
+                                            <option value="17" label="hindustan motors">hindustan motors</option>
+                                            <option value="18" label="icml">icml</option>
+                                            <option value="19" label="jaguar">jaguar</option>
+                                            <option value="20" label="mitsubishi">mitsubishi</option>
+                                            <option value="21" label="opel">opel</option>
+                                            <option value="22" label="volvo">volvo</option>
+                                            <option value="23" label="tata">tata</option>
+                                        </select>
+                                        <span class="error" ng-show="Leadform.manufacturer.$error.required &amp;&amp; Leadform.manufacturer.$touched">Please select it</span>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <select name="vmodel" class="select-feild model ng-pristine ng-untouched ng-invalid ng-invalid-required" id="vmodel" required="required"
+                                            ng-required="true" ng-model="lead.manufacturer_model_id" ng-change="get_varients(lead)"
+                                            ng-options="manufacturer_model.id as manufacturer_model.name for manufacturer_model in manufacturer_models">
+                                            <option selected="selected" value="">Select Model*</option>
+                                        </select>
+                                        <span class="error ng-hide" ng-show="Leadform.vmodel.$error.required &amp;&amp; Leadform.vmodel.$touched">Please select model</span>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <select name="variant" class="select-feild varient ng-pristine ng-untouched ng-invalid ng-invalid-required" id="variant"
+                                            required="required" ng-required="true" ng-model="lead.variant_id" ng-change="get_years(lead)"
+                                            ng-options="variant.id as variant.name for variant in variants">
+                                            <option selected="selected" value="">Select Variant*</option>
+                                        </select>
+                                        <span class="error ng-hide" ng-show="Leadform.variant.$error.required &amp;&amp; Leadform.variant.$touched">Please select varient</span>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <select name="year" class="select-feild year ng-pristine ng-untouched ng-invalid ng-invalid-required" id="year" required="required"
+                                            ng-required="true" ng-model="lead.year_id" ng-change="get_years(lead)" ng-options="year.id as year.period for year in years">
+                                            <option selected="selected" value="">Select Manufacturing Year*</option>
+                                        </select>
+                                        <span class="error ng-hide" ng-show="Leadform.year.$error.required &amp;&amp; Leadform.year.$touched">Please select year</span>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <select name="km" class="select-feild km ng-pristine ng-untouched ng-valid" id="km" ng-model="lead.kms" ng-options="km.name as km.range for km in kms">
+                                            <option selected="selected" value="">Select Kilometers</option>
+                                            <option value="0" label="10000 Km">10000 Km</option>
+                                            <option value="1" label="10000 - 20000 Km">10000 - 20000 Km</option>
+                                            <option value="2" label="20000 - 40000 Km">20000 - 40000 Km</option>
+                                            <option value="3" label="40000 - 60000 Km">40000 - 60000 Km</option>
+                                            <option value="4" label="60000 - 100000 Km">60000 - 100000 Km</option>
+                                            <option value="5" label="60000 - 100000 Km">60000 - 100000 Km</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <input name="telephone" class="input-feild tel ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength"
+                                            id="telephone" required="required" type="text" maxlength="10" placeholder="Phone no.*"
+                                            ng-required="true" ng-model="lead.user_phone" autocorrect="off" autocomplete="off"
+                                            ng-pattern="/^[0-9]{10}$/">
+                                        <span class="error ng-hide" ng-show="Leadform.telephone.$error.required &amp;&amp; Leadform.telephone.$touched ">Please enter Mobile number</span>
+                                        <span class="error ng-hide" ng-show="Leadform.telephone.$error.pattern &amp;&amp; Leadform.telephone.$touched ">Please enter valid Mobile Number</span>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <input name="email" class="input-feild email ng-pristine ng-untouched ng-valid ng-valid-email" id="email" type="email" placeholder="Email Id"
+                                            ng-model="lead.user_email">
+                                        <span class="error ng-hide" ng-show="Leadform.email.$error.email &amp;&amp; Leadform.email.$touched ">Please enter valid email id</span>
+                                    </div>
+                                    <div class="form-col fl">
+                                        <button disabled="disabled" class="button" type="submit" ng-disabled="Leadform.$invalid">
+                                            <span>Check Price</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Evaluate My Car</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<

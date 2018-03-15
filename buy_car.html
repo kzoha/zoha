@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <title> Car-shop, Shop your Car</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <link rel='stylesheet' href="css/buy_car.css">
+    </head>
+    <style type="text/css">
+        
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="homepage.html">About Us
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Wanna Sell your car? </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link enabled" href="buy_car.html">Buy Your First Car</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">What We serve:-</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Book a free ride</a>
+                        <a class="dropdown-item" href="#">Evalauate Your Car price</a>
+                        <a class="dropdown-item" href="#">Buy Parts for your car</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="buy_car">
+        <h1>BUY YOUR DREAM CAR WITH US</h1>
+        <p class="lead">Buy your dream car with you. We provide you with a variety of cars that will chase your dream and of course fits
+            your budget.</p>
+    </div>
+    <hr>
+
+
+    <div class="leftbox">
+        <h1>Find your right car</h1>
+
+        <ul class="tabarea">
+            <li id="homeNewCarTab" class="active" onclick="createGAClickEventTrackingAdWords('Home Page', 'Search Block', 'New Car');">NEW CAR
+                <span class="arrow"></span>
+            </li>
+
+            <li id="homeUsedCarTab" onclick="createGAClickEventTrackingAdWords('Home Page', 'Search Block', 'Used Car');">USED CAR
+                <span class="arrow"></span>
+            </li>
+        </ul>
+
+        <div class="clear"></div>
+
+        <div class="searchelement" id="newcar">
+            <div class="radiobutton filter">
+
+                <label class="gs_control gs_radio" id="searchNewCarByBudgetInputDiv">
+                    <input name="newradio" type="radio" id="newCarByBudget" checked="">
+                    <span>By Budget</span>
+                    <span class="gs_control__indicator"></span>
+                </label>
+
+                <label class="gs_control gs_radio" id="searchNewCarByBrandInputDiv">
+                    <input name="newradio" type="radio" id="newCarByBrand">
+                    <span> By Brand</span>
+                    <span class="gs_control__indicator"></span>
+                </label>
+            </div>
+
+            <div class="clear"></div>
+
+            <div id="searchNewCarByBudgetDiv" class="disnone" style="display: block;">
+                <div class="selectarea">
+                    <span class="select-wrapper">
+                        <select name="newCarBudgetSelect" id="newCarBudgetSelect" class="custom-select">
+                            <option value="0">-Select Budget-</option>
+                            <option value="1-lakh-5-lakh">1 Lakh - 5 Lakh</option>
+                            <option value="5-lakh-10-lakh">5 Lakh - 10 Lakh</option>
+                            <option value="10-lakh-20-lakh">10 Lakh - 20 Lakh</option>
+                            <option value="20-lakh-50-lakh">20 Lakh - 50 Lakh</option>
+                            <option value="50-lakh-1-crore">50 Lakh - 1 Crore</option>
+                            <option value="above-1-crore">Above 1 Crore</option>
+                        </select>
+                        <span class="holder">-Select Budget-</span>
+                    </span>
+                    <span class="select-wrapper">
+                        <select name="newCarVehicleTypeSelect" id="newCarVehicleTypeSelect" class="custom-select border">
+                            <option value="1" selected="selected">All Vehicle Types</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="sedans">Sedans</option>
+                            <option value="muv">MUV</option>
+                            <option value="suv">SUV</option>
+                            <option value="luxury">luxury</option>
+                            <option value="hybrids">Hybrids</option>
+                            <option value="minivans">Minivans</option>
+                            <option value="convertibles">Convertibles</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="diesel engines">Diesel Engines</option>
+                            <option value="wagons">Wagons</option>
+                            <option value="pickup trucks">Pickup Trucks</option>
+                        </select>
+                        <span class="holder">All Vehicle Types</span>
+                    </span>
+
+                    <div class="clear"></div>
+
+                </div>
+
+                <button class="button" onclick="createGAClickEventTrackingAdWords('panel', 'clicked', 'panel-button-new_car_budget_search-home');searchNewCarByBudget('newCarBudgetSelect','newCarVehicleTypeSelect');">Search</button>
+            </div>
+
+            <div id="staticSearchByBudgetDiv" style="display: none;">
+                <span class="select-wrapper">
+                    <input class="staticsearchbybrand Text14 custom-select border" type="Text" value="-Select Budget-">
+                    <span class="holder"></span>
+                </span>
+                <span class="select-wrapper">
+                    <input class="staticsearchbybrand Text14 custom-select border" type="Text" value="-Select Vehicle Types-">
+                    <span class="holder"></span>
+                </span>
+
+                <button class="button">Search</button>
+            </div>
+
+            <div id="searchNewCarByBrandDiv" class="disnone">
+                <div class="selectarea">
+                    <span class="select-wrapper">
+                        <select class="custom-select" name="newCarBrandSelect" id="newCarBrandSelect">
+                            <option value="" disabled="disabled">-Select Brand-</option>
+                            <option value="Maruti">Maruti</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Mahindra">Mahindra</option>
+                            <option value="Tata">Tata</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Datsun">Datsun</option>
+
+                            <option value="" disabled="disabled">-All Brands-</option>
+                            <option value="Aston Martin">Aston Martin</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Bajaj">Bajaj</option>
+                            <option value="Bentley">Bentley</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Bugatti">Bugatti</option>
+                            <option value="Datsun">Datsun</option>
+                            <option value="DC">DC</option>
+                            <option value="Ferrari">Ferrari</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Force">Force</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="ICML">ICML</option>
+                            <option value="Isuzu">Isuzu</option>
+                            <option value="Jaguar">Jaguar</option>
+                            <option value="Jeep">Jeep</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Lamborghini">Lamborghini</option>
+                            <option value="Land Rover">Land Rover</option>
+                            <option value="Lexus">Lexus</option>
+                            <option value="Mahindra">Mahindra</option>
+                            <option value="Maruti">Maruti</option>
+                            <option value="Maserati">Maserati</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="MG">MG</option>
+                            <option value="Mini">Mini</option>
+                            <option value="Mitsubishi">Mitsubishi</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Porsche">Porsche</option>
+                            <option value="Premier">Premier</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Rolls-Royce">Rolls-Royce</option>
+                            <option value="Skoda">Skoda</option>
+                            <option value="Tata">Tata</option>
+                            <option value="Tesla">Tesla</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Volvo">Volvo</option>
+                        </select>
+                        <span class="holder">-Select Brand-</span>
+                    </span>
+                    <span class="select-wrapper">
+                        <select class="custom-select" name="newCarModelSelect" id="newCarModelSelect">
+                            <option value="">-Select Model-</option>
+                        </select>
+                        <span class="holder">-Select Model-</span>
+                    </span>
+                </div>
+
+                <button class="button" onclick="createGAClickEventTrackingAdWords('panel', 'clicked', 'panel-button-new_car_brand_search-home');searchNewCarByBrandOrModel('newCarBrandSelect','newCarModelSelect');">Search</button>
+            </div>
+        </div>
+
+        <div id="usedcar" class="disnone searchelement">
+            <div class="radiobutton filter">
+
+                <label class="gs_control gs_radio" id="searchUsedCarByBudgetInputDiv">
+                    <input name="usedradio" type="radio" id="usedCarByBudget" checked="">
+                    <span>By Budget</span>
+                    <span class="gs_control__indicator"></span>
+                </label>
+
+                <label class="gs_control gs_radio" id="searchUsedCarByBrandInputDiv">
+                    <input name="usedradio" type="radio" id="usedCarByBrand">
+                    <span>By Model</span>
+                    <span class="gs_control__indicator"></span>
+                </label>
+
+            </div>
+
+            <div id="searchUsedCarByBudgetDiv">
+                <div class="selectarea">
+
+                    <span class="select-wrapper">
+                        <select class="custom-select" name="usedCarBudgetSelect" id="usedCarBudgetSelect">
+                            <option value="">-Select Budget-</option>
+                            <option value="Below 1 Lakh">Below 1 Lakh</option>
+                            <option value="1 Lakh - to - 2 Lakh">1 Lakh - 2 Lakh</option>
+                            <option value="2 Lakh - to - 3 Lakh">2 Lakh - 3 Lakh</option>
+                            <option value="3 Lakh - to - 4 Lakh">3 Lakh - 4 Lakh</option>
+                            <option value="4 Lakh - to - 5 Lakh">4 Lakh - 5 Lakh</option>
+                            <option value="5 Lakh - to - 6 Lakh">5 Lakh - 6 Lakh</option>
+                            <option value="6 Lakh - to - 8 Lakh">6 Lakh - 8 Lakh</option>
+                            <option value="8 Lakh - to - 10 Lakh">8 Lakh - 10 Lakh</option>
+                            <option value="10 Lakh - to - 30 Lakh">10 Lakh - 30 Lakh</option>
+                            <option value="Above 30 Lakh">Above 30 Lakh</option>
+                        </select>
+                        <span class="holder">-Select Budget-</span>
+                    </span>
+
+                    <div id="USBCity">
+                        <span class="select-wrapper">
+                            <select class="custom-select" name="usedCarCitySelectByBudget" id="usedCarCitySelectByBudget">
+
+                                <option value="">-Select City-</option>
+                            </select>
+                            <span class="holder">-Select City-</span>
+                        </span>
+                    </div>
+                </div>
+                <button class="button" onclick="createGAClickEventTrackingAdWords('Main HomePage', 'Search', 'Budget'); createGAClickEventTrackingAdWords('send', 'pageview', '/Virtual/PrimarySearch');searchUsedCarByBudget('usedCarBudgetSelect','usedCarCitySelectByBudget');">Search</button>
+                <div class="clear"></div>
+            </div>
+
+            <div id="searchUsedCarByBrandDiv" class="disnone">
+                <div class="selectarea">
+                    <span class="select-wrapper">
+                        <select class="custom-select" name="usedCarModelSelect" id="usedCarModelSelect">
+                            <option value="">-Select Model-</option>
+                            <option value="Ambassador">Ambassador</option>
+                            <option value="Aston Martin Rapide">Aston Martin Rapide</option>
+                            <option value="Aston Martin Vantage">Aston Martin Vantage</option>
+                            <option value="Audi A3">Audi A3</option>
+                            <option value="Audi A3 2014-2017">Audi A3 2014-2017</option>
+                            <option value="Audi A3 cabriolet">Audi A3 cabriolet</option>
+                            <option value="Audi A4">Audi A4</option>
+                            <option value="Audi A4 2008-2014">Audi A4 2008-2014</option>
+                            <option value="Audi A4 2014-2016">Audi A4 2014-2016</option>
+                            <option value="Audi A6">Audi A6</option>
+                            <option value="Audi A6 2005-2009">Audi A6 2005-2009</option>
+                            <option value="Audi A6 2009-2011">Audi A6 2009-2011</option>
+                            <option value="Audi A6 2011-2015">Audi A6 2011-2015</option>
+                            <option value="Audi A7">Audi A7</option>
+                            <option value="Audi A8">Audi A8</option>
+                            <option value="Audi Q3">Audi Q3</option>
+                            <option value="Audi Q3 2012-2015">Audi Q3 2012-2015</option>
+                            <option value="Audi Q3 2015-2017">Audi Q3 2015-2017</option>
+                            <option value="Audi Q5 2008-2012">Audi Q5 2008-2012</option>
+                            <option value="Audi Q5 2012-2017">Audi Q5 2012-2017</option>
+                            <option value="Audi Q7">Audi Q7</option>
+                            <option value="Audi R8">Audi R8</option>
+                            <option value="Audi R8 2006-2012">Audi R8 2006-2012</option>
+                            <option value="Audi RS5">Audi RS5</option>
+                            <option value="Audi S5">Audi S5</option>
+                            <option value="Audi TT">Audi TT</option>
+                            <option value="Audi TT 2006-2014">Audi TT 2006-2014</option>
+                            <option value="BMW 1 Series 2013-2015">BMW 1 Series 2013-2015</option>
+                            <option value="BMW 3 Series">BMW 3 Series</option>
+                            <option value="BMW 3 Series 2005-2011">BMW 3 Series 2005-2011</option>
+                            <option value="BMW 3 Series 2011-2015">BMW 3 Series 2011-2015</option>
+                            <option value="BMW 5 Series">BMW 5 Series</option>
+                            <option value="BMW 5 Series 2003-2012">BMW 5 Series 2003-2012</option>
+                            <option value="BMW 5 Series 2010-2013">BMW 5 Series 2010-2013</option>
+                            <option value="BMW 5 Series 2013-2017">BMW 5 Series 2013-2017</option>
+                            <option value="BMW 6 Series">BMW 6 Series</option>
+                            <option value="BMW 6 Series 2008-2011">BMW 6 Series 2008-2011</option>
+                            <option value="BMW 6 Series 2011-2014">BMW 6 Series 2011-2014</option>
+                            <option value="BMW 6 Series 2013-2015">BMW 6 Series 2013-2015</option>
+                            <option value="BMW 7 Series">BMW 7 Series</option>
+                            <option value="BMW 7 Series 2007-2012">BMW 7 Series 2007-2012</option>
+                            <option value="BMW 7 Series 2012-2015">BMW 7 Series 2012-2015</option>
+                            <option value="BMW M Series">BMW M Series</option>
+                            <option value="BMW M Series 2006-2015">BMW M Series 2006-2015</option>
+                            <option value="BMW X1">BMW X1</option>
+                            <option value="BMW X1 2010-2012">BMW X1 2010-2012</option>
+                            <option value="BMW X1 2012-2015">BMW X1 2012-2015</option>
+                            <option value="BMW X3">BMW X3</option>
+                            <option value="BMW X3 2011-2013">BMW X3 2011-2013</option>
+                            <option value="BMW X5">BMW X5</option>
+                            <option value="BMW X5 2007-2013">BMW X5 2007-2013</option>
+                            <option value="BMW X6">BMW X6</option>
+                            <option value="BMW X6 2009-2014">BMW X6 2009-2014</option>
+                            <option value="BMW Z4">BMW Z4</option>
+                            <option value="BMW Z4 2009-2013">BMW Z4 2009-2013</option>
+                            <option value="Bentley Arnage">Bentley Arnage</option>
+                            <option value="Bentley Continental">Bentley Continental</option>
+                            <option value="Bugatti Veyron">Bugatti Veyron</option>
+                            <option value="Cadillac CTS">Cadillac CTS</option>
+                            <option value="Chevrolet Aveo">Chevrolet Aveo</option>
+                            <option value="Chevrolet Aveo U-VA">Chevrolet Aveo U-VA</option>
+                            <option value="Chevrolet Beat">Chevrolet Beat</option>
+                            <option value="Chevrolet Captiva">Chevrolet Captiva</option>
+                            <option value="Chevrolet Cruze">Chevrolet Cruze</option>
+                            <option value="Chevrolet Enjoy">Chevrolet Enjoy</option>
+                            <option value="Chevrolet Optra">Chevrolet Optra</option>
+                            <option value="Chevrolet Optra Magnum">Chevrolet Optra Magnum</option>
+                            <option value="Chevrolet OptraSRV">Chevrolet OptraSRV</option>
+                            <option value="Chevrolet Sail">Chevrolet Sail</option>
+                            <option value="Chevrolet Sail Hatchback">Chevrolet Sail Hatchback</option>
+                            <option value="Chevrolet Spark">Chevrolet Spark</option>
+                            <option value="Chevrolet Tavera">Chevrolet Tavera</option>
+                            <option value="Chevrolet Tavera Neo">Chevrolet Tavera Neo</option>
+                            <option value="Chevrolet Trailblazer">Chevrolet Trailblazer</option>
+                            <option value="DC Avanti">DC Avanti</option>
+                            <option value="Daewoo Cielo">Daewoo Cielo</option>
+                            <option value="Daewoo Matiz">Daewoo Matiz</option>
+                            <option value="Datsun GO">Datsun GO</option>
+                            <option value="Datsun GO Plus">Datsun GO Plus</option>
+                            <option value="Datsun RediGO">Datsun RediGO</option>
+
+                            <option value="Fiat 1100">Fiat 1100</option>
+                            <option value="Fiat 500">Fiat 500</option>
+                            <option value="Fiat Avventura">Fiat Avventura</option>
+                            <option value="Fiat Grande Punto">Fiat Grande Punto</option>
+                            <option value="Fiat Linea">Fiat Linea</option>
+                            <option value="Fiat Linea Classic">Fiat Linea Classic</option>
+                            <option value="Fiat Palio">Fiat Palio</option>
+                            <option value="Fiat Palio D">Fiat Palio D</option>
+                            <option value="Fiat Palio NV">Fiat Palio NV</option>
+                            <option value="Fiat Palio Stile">Fiat Palio Stile</option>
+                            <option value="Fiat Petra">Fiat Petra</option>
+                            <option value="Fiat Punto">Fiat Punto</option>
+                            <option value="Fiat Punto EVO">Fiat Punto EVO</option>
+                            <option value="Fiat Siena">Fiat Siena</option>
+                            <option value="Fiat Uno">Fiat Uno</option>
+                            <option value="Force Gurkha">Force Gurkha</option>
+                            <option value="Force One">Force One</option>
+                            <option value="Force Trax Cruiser">Force Trax Cruiser</option>
+                            <option value="Ford Classic">Ford Classic</option>
+                            <option value="Ford Ecosport">Ford Ecosport</option>
+                            <option value="Ford Endeavour">Ford Endeavour</option>
+                            <option value="Ford Falcon">Ford Falcon</option>
+                            <option value="Ford Fiesta">Ford Fiesta</option>
+                            <option value="Ford Fiesta Classic">Ford Fiesta Classic</option>
+                            <option value="Ford Figo">Ford Figo</option>
+                            <option value="Ford Figo Aspire">Ford Figo Aspire</option>
+                            <option value="Ford Fusion">Ford Fusion</option>
+                            <option value="Ford Ikon">Ford Ikon</option>
+                            <option value="Ford Mondeo">Ford Mondeo</option>
+                            <option value="Ford Mustang">Ford Mustang</option>
+                            <option value="Hindustan Motors Contessa">Hindustan Motors Contessa</option>
+                            <option value="Honda Accord">Honda Accord</option>
+                            <option value="Honda Amaze">Honda Amaze</option>
+                            <option value="Honda BR-V">Honda BR-V</option>
+                            <option value="Honda Brio">Honda Brio</option>
+                            <option value="Honda CR-V">Honda CR-V</option>
+                            <option value="Honda City">Honda City</option>
+                            <option value="Honda City ZX">Honda City ZX</option>
+                            <option value="Honda Civic">Honda Civic</option>
+                            <option value="Honda Jazz">Honda Jazz</option>
+                            <option value="Honda Mobilio">Honda Mobilio</option>
+                            <option value="Honda WR-V">Honda WR-V</option>
+                            <option value="Hyundai Accent">Hyundai Accent</option>
+                            <option value="Hyundai Creta">Hyundai Creta</option>
+                            <option value="Hyundai EON">Hyundai EON</option>
+                            <option value="Hyundai Elantra">Hyundai Elantra</option>
+                            <option value="Hyundai Elite i20 2014-2015">Hyundai Elite i20 2014-2015</option>
+                            <option value="Hyundai Getz">Hyundai Getz</option>
+                            <option value="Hyundai Grand i10">Hyundai Grand i10</option>
+                            <option value="Hyundai Santa Fe">Hyundai Santa Fe</option>
+                            <option value="Hyundai Santro">Hyundai Santro</option>
+                            <option value="Hyundai Santro Xing">Hyundai Santro Xing</option>
+                            <option value="Hyundai Sonata">Hyundai Sonata</option>
+                            <option value="Hyundai Sonata Embera">Hyundai Sonata Embera</option>
+                            <option value="Hyundai Sonata Transform">Hyundai Sonata Transform</option>
+                            <option value="Hyundai Terracan">Hyundai Terracan</option>
+                            <option value="Hyundai Tucson">Hyundai Tucson</option>
+                            <option value="Hyundai Verna">Hyundai Verna</option>
+                            <option value="Hyundai Xcent">Hyundai Xcent</option>
+                            <option value="Hyundai i10">Hyundai i10</option>
+                            <option value="Hyundai i20">Hyundai i20</option>
+                            <option value="Hyundai i20 Active">Hyundai i20 Active</option>
+                            <option value="ICML Rhino Rx">ICML Rhino Rx</option>
+                            <option value="Infiniti FX">Infiniti FX</option>
+                            <option value="Isuzu D-Max V-Cross">Isuzu D-Max V-Cross</option>
+                            <option value="Isuzu MU 7">Isuzu MU 7</option>
+                            <option value="Isuzu MU-X">Isuzu MU-X</option>
+                            <option value="Jaguar F Type">Jaguar F Type</option>
+                            <option value="Jaguar XE">Jaguar XE</option>
+                            <option value="Jaguar XF">Jaguar XF</option>
+                            <option value="Jaguar XF 2009-2013">Jaguar XF 2009-2013</option>
+                            <option value="Jaguar XJ">Jaguar XJ</option>
+                            <option value="Jaguar XJ 2009-2013">Jaguar XJ 2009-2013</option>
+                            <option value="Jaguar XJ 2013-2015">Jaguar XJ 2013-2015</option>
+                            <option value="Jaguar XK">Jaguar XK</option>
+                            <option value="Jeep Compass">Jeep Compass</option>
+                            <option value="Jeep Grand Cherokee">Jeep Grand Cherokee</option>
+                            <option value="Jeep Kaiser">Jeep Kaiser</option>
+                            <option value="Lamborghini Gallardo">Lamborghini Gallardo</option>
+                            <option value="Lamborghini Huracan">Lamborghini Huracan</option>
+                            <option value="Land Rover Discovery">Land Rover Discovery</option>
+                            <option value="Land Rover Discovery Sport">Land Rover Discovery Sport</option>
+                            <option value="Land Rover Freelander 2">Land Rover Freelander 2</option>
+                            <option value="Land Rover Freelander 2 2009-2013">Land Rover Freelander 2 2009-2013</option>
+                            <option value="Land Rover Range Rover">Land Rover Range Rover</option>
+                            <option value="Land Rover Range Rover 2010-2012">Land Rover Range Rover 2010-2012</option>
+                            <option value="Land Rover Range Rover 2012-2013">Land Rover Range Rover 2012-2013</option>
+                            <option value="Land Rover Range Rover 2013-2014">Land Rover Range Rover 2013-2014</option>
+                            <option value="Land Rover Range Rover 2014-2017">Land Rover Range Rover 2014-2017</option>
+                            <option value="Land Rover Range Rover Evoque">Land Rover Range Rover Evoque</option>
+                            <option value="Land Rover Range Rover Evoque 2011-2014">Land Rover Range Rover Evoque 2011-2014</option>
+                            <option value="Land Rover Range Rover Evoque 2015-2016">Land Rover Range Rover Evoque 2015-2016</option>
+                            <option value="Land Rover Range Rover Sport">Land Rover Range Rover Sport</option>
+                            <option value="Land Rover Range Rover Sport 2005 2012">Land Rover Range Rover Sport 2005 2012</option>
+                            <option value="Mahindra Bolero">Mahindra Bolero</option>
+                            <option value="Mahindra E Verito">Mahindra E Verito</option>
+                            <option value="Mahindra Jeep">Mahindra Jeep</option>
+                            <option value="Mahindra KUV 100">Mahindra KUV 100</option>
+                            <option value="Mahindra Logan">Mahindra Logan</option>
+                            <option value="Mahindra NuvoSport">Mahindra NuvoSport</option>
+                            <option value="Mahindra Quanto">Mahindra Quanto</option>
+                            <option value="Mahindra Renault Logan">Mahindra Renault Logan</option>
+                            <option value="Mahindra Scorpio">Mahindra Scorpio</option>
+                            <option value="Mahindra Ssangyong Rexton">Mahindra Ssangyong Rexton</option>
+                            <option value="Mahindra Supro">Mahindra Supro</option>
+                            <option value="Mahindra TUV 300">Mahindra TUV 300</option>
+                            <option value="Mahindra Thar">Mahindra Thar</option>
+                            <option value="Mahindra Verito">Mahindra Verito</option>
+                            <option value="Mahindra Verito Vibe">Mahindra Verito Vibe</option>
+                            <option value="Mahindra XUV500">Mahindra XUV500</option>
+                            <option value="Mahindra Xylo">Mahindra Xylo</option>
+                            <option value="Mahindra e2o">Mahindra e2o</option>
+                            <option value="Maruti 1000">Maruti 1000</option>
+                            <option value="Maruti 800">Maruti 800</option>
+                            <option value="Maruti A-Star">Maruti A-Star</option>
+                            <option value="Maruti Alto">Maruti Alto</option>
+                            <option value="Maruti Alto 800">Maruti Alto 800</option>
+                            <option value="Maruti Alto K10">Maruti Alto K10</option>
+                            <option value="Maruti Baleno">Maruti Baleno</option>
+                            <option value="Maruti Celerio">Maruti Celerio</option>
+                            <option value="Maruti Ciaz">Maruti Ciaz</option>
+                            <option value="Maruti Eeco">Maruti Eeco</option>
+                            <option value="Maruti Ertiga">Maruti Ertiga</option>
+                            <option value="Maruti Esteem">Maruti Esteem</option>
+
+                            <option value="Maruti Estilo">Maruti Estilo</option>
+                            <option value="Maruti Grand Vitara">Maruti Grand Vitara</option>
+                            <option value="Maruti Gypsy">Maruti Gypsy</option>
+                            <option value="Maruti Ignis">Maruti Ignis</option>
+                            <option value="Maruti Kizashi">Maruti Kizashi</option>
+                            <option value="Maruti Omni">Maruti Omni</option>
+                            <option value="Maruti Ritz">Maruti Ritz</option>
+                            <option value="Maruti SX4">Maruti SX4</option>
+                            <option value="Maruti SX4 S Cross">Maruti SX4 S Cross</option>
+                            <option value="Maruti Swift">Maruti Swift</option>
+                            <option value="Maruti Swift Dzire">Maruti Swift Dzire</option>
+                            <option value="Maruti Versa">Maruti Versa</option>
+                            <option value="Maruti Vitara Brezza">Maruti Vitara Brezza</option>
+                            <option value="Maruti Wagon R">Maruti Wagon R</option>
+                            <option value="Maruti Wagon R Stingray">Maruti Wagon R Stingray</option>
+                            <option value="Maruti Zen">Maruti Zen</option>
+                            <option value="Maruti Zen Estilo">Maruti Zen Estilo</option>
+                            <option value="Maserati Ghibli">Maserati Ghibli</option>
+                            <option value="Maserati Gran Turismo">Maserati Gran Turismo</option>
+                            <option value="Maserati Quattroporte 2011-2015">Maserati Quattroporte 2011-2015</option>
+                            <option value="Mercedes-Benz A Class">Mercedes-Benz A Class</option>
+                            <option value="Mercedes-Benz A Class 2013-2015">Mercedes-Benz A Class 2013-2015</option>
+                            <option value="Mercedes-Benz AMG GT">Mercedes-Benz AMG GT</option>
+                            <option value="Mercedes-Benz B Class">Mercedes-Benz B Class</option>
+                            <option value="Mercedes-Benz B Class 2012-2015">Mercedes-Benz B Class 2012-2015</option>
+                            <option value="Mercedes-Benz CLA">Mercedes-Benz CLA</option>
+                            <option value="Mercedes-Benz CLA 2015-2016">Mercedes-Benz CLA 2015-2016</option>
+                            <option value="Mercedes-Benz CLS-Class">Mercedes-Benz CLS-Class</option>
+                            <option value="Mercedes-Benz CLS-Class 2006-2010">Mercedes-Benz CLS-Class 2006-2010</option>
+                            <option value="Mercedes-Benz E-Class">Mercedes-Benz E-Class</option>
+                            <option value="Mercedes-Benz E-Class 1993-2009">Mercedes-Benz E-Class 1993-2009</option>
+                            <option value="Mercedes-Benz E-Class 2009-2013">Mercedes-Benz E-Class 2009-2013</option>
+                            <option value="Mercedes-Benz E-Class 2013-2015">Mercedes-Benz E-Class 2013-2015</option>
+                            <option value="Mercedes-Benz E-Class 2015-2017">Mercedes-Benz E-Class 2015-2017</option>
+                            <option value="Mercedes-Benz GL-Class">Mercedes-Benz GL-Class</option>
+                            <option value="Mercedes-Benz GL-Class 2007 2012">Mercedes-Benz GL-Class 2007 2012</option>
+                            <option value="Mercedes-Benz GLA Class">Mercedes-Benz GLA Class</option>
+                            <option value="Mercedes-Benz GLA Class 2014-2017">Mercedes-Benz GLA Class 2014-2017</option>
+                            <option value="Mercedes-Benz GLC">Mercedes-Benz GLC</option>
+                            <option value="Mercedes-Benz GLE">Mercedes-Benz GLE</option>
+                            <option value="Mercedes-Benz GLS">Mercedes-Benz GLS</option>
+                            <option value="Mercedes-Benz M-Class">Mercedes-Benz M-Class</option>
+                            <option value="Mercedes-Benz MB-Class">Mercedes-Benz MB-Class</option>
+                            <option value="Mercedes-Benz New C-Class">Mercedes-Benz New C-Class</option>
+                            <option value="Mercedes-Benz R-Class">Mercedes-Benz R-Class</option>
+                            <option value="Mercedes-Benz S-Class">Mercedes-Benz S-Class</option>
+                            <option value="Mercedes-Benz S Class 2005 2013">Mercedes-Benz S Class 2005 2013</option>
+                            <option value="Mercedes-Benz SLK-Class">Mercedes-Benz SLK-Class</option>
+                            <option value="Mini 3 DOOR">Mini 3 DOOR</option>
+                            <option value="Mini 5 DOOR">Mini 5 DOOR</option>
+                            <option value="Mini Cooper">Mini Cooper</option>
+                            <option value="Mini Cooper Convertible">Mini Cooper Convertible</option>
+                            <option value="Mini Countryman">Mini Countryman</option>
+                            <option value="Mitsubishi Cedia">Mitsubishi Cedia</option>
+                            <option value="Mitsubishi FTO">Mitsubishi FTO</option>
+                            <option value="Mitsubishi Lancer">Mitsubishi Lancer</option>
+                            <option value="Mitsubishi Montero">Mitsubishi Montero</option>
+                            <option value="Mitsubishi Outlander">Mitsubishi Outlander</option>
+                            <option value="Mitsubishi Pajero">Mitsubishi Pajero</option>
+                            <option value="Nissan 350Z">Nissan 350Z</option>
+                            <option value="Nissan Evalia">Nissan Evalia</option>
+                            <option value="Nissan Micra">Nissan Micra</option>
+                            <option value="Nissan Micra Active">Nissan Micra Active</option>
+                            <option value="Nissan Sunny">Nissan Sunny</option>
+                            <option value="Nissan Sunny 2011-2014">Nissan Sunny 2011-2014</option>
+                            <option value="Nissan Teana">Nissan Teana</option>
+                            <option value="Nissan Terrano">Nissan Terrano</option>
+                            <option value="Nissan X-Trail">Nissan X-Trail</option>
+                            <option value="Opel Astra">Opel Astra</option>
+                            <option value="OpelCorsa">OpelCorsa</option>
+                            <option value="Porsche Boxster">Porsche Boxster</option>
+                            <option value="Porsche Carrera GT">Porsche Carrera GT</option>
+                            <option value="Porsche Cayenne">Porsche Cayenne</option>
+                            <option value="Porsche Cayenne 2009-2014">Porsche Cayenne 2009-2014</option>
+                            <option value="Porsche Macan">Porsche Macan</option>
+                            <option value="Porsche Panamera 2010 2013">Porsche Panamera 2010 2013</option>
+                            <option value="Porsche Panamera 2013-2017">Porsche Panamera 2013-2017</option>
+                            <option value="Premier Padmini">Premier Padmini</option>
+                            <option value="Premier Rio">Premier Rio</option>
+                            <option value="Renault Duster">Renault Duster</option>
+                            <option value="Renault Fluence">Renault Fluence</option>
+                            <option value="Renault KWID">Renault KWID</option>
+                            <option value="Renault Koleos">Renault Koleos</option>
+                            <option value="Renault Lodgy">Renault Lodgy</option>
+                            <option value="Renault Pulse">Renault Pulse</option>
+                            <option value="Renault Scala">Renault Scala</option>
+                            <option value="Rolls-Royce Ghost">Rolls-Royce Ghost</option>
+                            <option value="Skoda Fabia">Skoda Fabia</option>
+                            <option value="Skoda Laura">Skoda Laura</option>
+                            <option value="Skoda Octavia">Skoda Octavia</option>
+                            <option value="Skoda Rapid">Skoda Rapid</option>
+                            <option value="Skoda Superb">Skoda Superb</option>
+                            <option value="Skoda Yeti">Skoda Yeti</option>
+                            <option value="Tata Aria">Tata Aria</option>
+                            <option value="Tata Bolt">Tata Bolt</option>
+                            <option value="Tata Estate">Tata Estate</option>
+                            <option value="Tata Hexa">Tata Hexa</option>
+                            <option value="Tata Indica">Tata Indica</option>
+                            <option value="Tata Indica V2">Tata Indica V2</option>
+                            <option value="Tata Indica Vista">Tata Indica Vista</option>
+                            <option value="Tata Indigo">Tata Indigo</option>
+                            <option value="Tata Indigo CS">Tata Indigo CS</option>
+                            <option value="Tata Indigo XL">Tata Indigo XL</option>
+                            <option value="Tata Indigo eCS">Tata Indigo eCS</option>
+                            <option value="Tata Manza">Tata Manza</option>
+                            <option value="Tata Nano">Tata Nano</option>
+                            <option value="Tata New Safari">Tata New Safari</option>
+                            <option value="Tata Nexon">Tata Nexon</option>
+                            <option value="Tata Safari Storme">Tata Safari Storme</option>
+                            <option value="Tata Spacio">Tata Spacio</option>
+                            <option value="Tata Sumo">Tata Sumo</option>
+                            <option value="Tata Tiago">Tata Tiago</option>
+                            <option value="Tata Tigor">Tata Tigor</option>
+                            <option value="Tata Venture">Tata Venture</option>
+                            <option value="Tata Winger">Tata Winger</option>
+                            <option value="Tata Xenon XT">Tata Xenon XT</option>
+                            <option value="Tata Zest">Tata Zest</option>
+                            <option value="Toyota Alphard">Toyota Alphard</option>
+                            <option value="Toyota Camry">Toyota Camry</option>
+                            <option value="Toyota Corolla">Toyota Corolla</option>
+                            <option value="Toyota Corolla Altis">Toyota Corolla Altis</option>
+                            <option value="Toyota Etios">Toyota Etios</option>
+                            <option value="Toyota Etios Cross">Toyota Etios Cross</option>
+                            <option value="Toyota Etios Liva">Toyota Etios Liva</option>
+                            <option value="Toyota Fortuner">Toyota Fortuner</option>
+                            <option value="Toyota Innova">Toyota Innova</option>
+                            <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
+                            <option value="Toyota Land Cruiser">Toyota Land Cruiser</option>
+                            <option value="Toyota Land Cruiser Prado">Toyota Land Cruiser Prado</option>
+                            <option value="Toyota Qualis">Toyota Qualis</option>
+                            <option value="Toyota prado">Toyota prado</option>
+                            <option value="Volkswagen 1600">Volkswagen 1600</option>
+                            <option value="Volkswagen Ameo">Volkswagen Ameo</option>
+                            <option value="Volkswagen Beetle">Volkswagen Beetle</option>
+                            <option value="Volkswagen CrossPolo">Volkswagen CrossPolo</option>
+                            <option value="Volkswagen GTI">Volkswagen GTI</option>
+                            <option value="Volkswagen Jetta">Volkswagen Jetta</option>
+                            <option value="Volkswagen Jetta 2011-2013">Volkswagen Jetta 2011-2013</option>
+                            <option value="Volkswagen Multivan">Volkswagen Multivan</option>
+                            <option value="Volkswagen Passat">Volkswagen Passat</option>
+                            <option value="Volkswagen Phaeton">Volkswagen Phaeton</option>
+                            <option value="Volkswagen Polo">Volkswagen Polo</option>
+                            <option value="Volkswagen Polo GTI">Volkswagen Polo GTI</option>
+                            <option value="Volkswagen Tiguan">Volkswagen Tiguan</option>
+                            <option value="Volkswagen Touareg">Volkswagen Touareg</option>
+                            <option value="Volkswagen Vento">Volkswagen Vento</option>
+                            <option value="Volvo S 80">Volvo S 80</option>
+                            <option value="Volvo S80 2006-2013">Volvo S80 2006-2013</option>
+                            <option value="Volvo S40">Volvo S40</option>
+                            <option value="Volvo S60">Volvo S60</option>
+                            <option value="Volvo S60 2006-2012">Volvo S60 2006-2012</option>
+                            <option value="Volvo S60 2013-2015">Volvo S60 2013-2015</option>
+                            <option value="Volvo S60 Cross Country">Volvo S60 Cross Country</option>
+                            <option value="Volvo S90">Volvo S90</option>
+                            <option value="Volvo V40">Volvo V40</option>
+                            <option value="Volvo V40 Cross Country">Volvo V40 Cross Country</option>
+                            <option value="Volvo V90 Cross Country">Volvo V90 Cross Country</option>
+                            <option value="Volvo XC 90">Volvo XC 90</option>
+                            <option value="Volvo XC90 2007-2015">Volvo XC90 2007-2015</option>
+                            <option value="Volvo XC60">Volvo XC60</option>
+                            <option value="Volvo XC60 2008-2012">Volvo XC60 2008-2012</option>
+                        </select>
+                        <span class="holder">-Select Model-</span>
+                    </span>
+                    <div id="UCMCity">
+                        <span class="select-wrapper">
+                            <select class="custom-select" name="usedCarCitySelect" id="usedCarCitySelect">
+                                <option value="">-Select City-</option>
+                            </select>
+                            <span class="holder">-Select City-</span>
+                        </span>
+                    </div>
+                    <button class="button" onclick="createGAClickEventTrackingAdWords('Main HomePage', 'Search', 'Model');createGAClickEventTrackingAdWords('send', 'pageview', '/Virtual/PrimarySearch');searchUsedCarByModelAndCity('usedCarModelSelect','usedCarCitySelect');">SEARCH</button>
+                </div>
+            </div>
+
+
+            </main>
+            <!-- /.container -->
+
+
+            <!-- Bootstrap core JavaScript
+    ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
